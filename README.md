@@ -1,6 +1,7 @@
 # Subtitle CC remover
 
 [<img alt="screenshot" src="https://raw.githubusercontent.com/Byproduct/subtitle_cc_remover/refs/heads/main/screenshot.png" />](https://www.youtube.com/watch?v=UnRvgQE8RyQ)
+(^ click for a demonstration video)
 
 English subtitles are sometimes only available as the "CC" versions that include descriptions such as (LOUD EXPLOSION) to help hearing-impaired viewers.
 
