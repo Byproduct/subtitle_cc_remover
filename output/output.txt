@@ -1,0 +1,3 @@
+Output .srt files will be generated here.
+
+(You can delete this text file, it was needed only for github to create this folder.)
