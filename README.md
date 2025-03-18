@@ -1,4 +1,4 @@
-# Subtitle CC remover
+# .srt subtitle CC remover
 
 [<img alt="screenshot" src="https://raw.githubusercontent.com/Byproduct/subtitle_cc_remover/refs/heads/main/screenshot.png" />](https://www.youtube.com/watch?v=UnRvgQE8RyQ)
 
