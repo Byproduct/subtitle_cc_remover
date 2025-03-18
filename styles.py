@@ -18,6 +18,7 @@ LIGHT_BUTTON_HOVER = "#2980b9"
 BORDER_RADIUS = "5px"
 PADDING = "10px"
 BUTTON_PADDING_COMPACT = "5px 10px"
+FONT_FAMILY = "Verdana"
 
 def get_dialog_style(dark_mode):
     if dark_mode:
@@ -25,6 +26,7 @@ def get_dialog_style(dark_mode):
             QDialog {{
                 background-color: {DARK_BG};
                 color: {DARK_TEXT};
+                font-family: {FONT_FAMILY};
             }}
             QTextEdit {{
                 background-color: {DARK_BG_LIGHTER};
@@ -32,9 +34,17 @@ def get_dialog_style(dark_mode):
                 border: 1px solid {DARK_BORDER};
                 border-radius: {BORDER_RADIUS};
                 padding: {PADDING};
+                font-family: {FONT_FAMILY};
             }}
         """
-    return ""
+    return f"""
+        QDialog {{
+            font-family: {FONT_FAMILY};
+        }}
+        QTextEdit {{
+            font-family: {FONT_FAMILY};
+        }}
+    """
 
 def get_dialog_button_style(dark_mode):
     bg_color = DARK_BUTTON_PRIMARY if dark_mode else LIGHT_BUTTON_PRIMARY
@@ -48,6 +58,7 @@ def get_dialog_button_style(dark_mode):
             padding: {PADDING};
             border-radius: {BORDER_RADIUS};
             font-size: 14px;
+            font-family: {FONT_FAMILY};
         }}
         QPushButton:hover {{
             background-color: {hover_color};
@@ -63,6 +74,7 @@ def get_drop_area_style(dark_mode):
                 background-color: {DARK_BG_LIGHTER};
                 color: {DARK_TEXT};
                 padding: 20px;
+                font-family: {FONT_FAMILY};
             }}
         """
     return f"""
@@ -71,6 +83,7 @@ def get_drop_area_style(dark_mode):
             border-radius: {BORDER_RADIUS};
             background-color: {LIGHT_BG_ALT};
             padding: 20px;
+            font-family: {FONT_FAMILY};
         }}
     """
 
@@ -82,6 +95,7 @@ def get_title_style(dark_mode):
             font-weight: bold;
             color: {color};
             margin: 10px;
+            font-family: {FONT_FAMILY};
         }}
     """
 
@@ -94,6 +108,7 @@ def get_text_display_style(dark_mode):
                 border: 1px solid {DARK_BORDER};
                 border-radius: {BORDER_RADIUS};
                 padding: {PADDING};
+                font-family: {FONT_FAMILY};
             }}
         """
     return f"""
@@ -102,6 +117,7 @@ def get_text_display_style(dark_mode):
             border: 1px solid {LIGHT_BORDER};
             border-radius: {BORDER_RADIUS};
             padding: {PADDING};
+            font-family: {FONT_FAMILY};
         }}
     """
 
@@ -117,6 +133,7 @@ def get_button_style(dark_mode):
             padding: {BUTTON_PADDING_COMPACT};
             border-radius: 4px;
             font-size: 12px;
+            font-family: {FONT_FAMILY};
         }}
         QPushButton:hover {{
             background-color: {hover_color};
@@ -126,8 +143,13 @@ def get_button_style(dark_mode):
     checkbox_style = f"""
         QCheckBox {{
             color: {DARK_TEXT};
+            font-family: {FONT_FAMILY};
         }}
-    """ if dark_mode else ""
+    """ if dark_mode else f"""
+        QCheckBox {{
+            font-family: {FONT_FAMILY};
+        }}
+    """
     
     return button_style, checkbox_style
 
@@ -137,9 +159,14 @@ def get_main_widget_style(dark_mode):
             QWidget {{
                 background-color: {DARK_BG};
                 color: {DARK_TEXT};
+                font-family: {FONT_FAMILY};
             }}
         """
-    return ""
+    return f"""
+        QWidget {{
+            font-family: {FONT_FAMILY};
+        }}
+    """
 
 # Style update functions
 def update_title_style(widget, dark_mode):
